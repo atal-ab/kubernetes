@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: in28min-configmap
+  namespace: default
+data:
+  app_url: http://example.com

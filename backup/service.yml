@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    cloud.google.com/neg: '{"ingress":true}'
+  creationTimestamp: "2023-01-04T11:44:16Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  labels:
+    app: in28min
+  name: in28min
+  namespace: default
+  resourceVersion: "78392"
+  uid: 2297b8fe-c7c8-49cb-995e-bc60a26225af
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.56.10.129
+  clusterIPs:
+  - 10.56.10.129
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31921
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: in28min
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 35.228.85.27

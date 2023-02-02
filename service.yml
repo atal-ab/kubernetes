@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: in28min
+  name: in28min
+  namespace: default
+spec:
+  ports:
+  - nodePort: 31921
+    port: 5000
+    protocol: TCP
+    targetPort: 5000
+  selector:
+    app: in28min
+  sessionAffinity: None
+  type: LoadBalancer
+
